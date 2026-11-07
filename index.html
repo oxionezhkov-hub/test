@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Погода в Петербурге</title>
+<style>
+  :root {
+    --bg: #f4f6f9;
+    --card: #ffffff;
+    --text: #1c2430;
+    --muted: #5d6b7e;
+    --accent: #2f6fdb;
+    --warn-bg: #fff4e0;
+    --warn-text: #8a5a00;
+    --border: #e1e6ee;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #11161d;
+      --card: #1a212b;
+      --text: #e6ebf2;
+      --muted: #97a3b4;
+      --accent: #6ea2ff;
+      --warn-bg: #3a2c12;
+      --warn-text: #f3c97a;
+      --border: #2a3340;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  main { max-width: 720px; margin: 0 auto; padding: 32px 16px 48px; }
+  h1 { font-size: 1.6rem; margin: 0 0 4px; }
+  .date { color: var(--muted); margin: 0 0 24px; }
+  .hero {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .icon { font-size: 56px; line-height: 1; }
+  .temp { font-size: 3rem; font-weight: 700; line-height: 1; }
+  .cond { color: var(--muted); margin-top: 6px; }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 12px;
+    margin-top: 16px;
+  }
+  .item {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 14px 16px;
+  }
+  .label { color: var(--muted); font-size: .85rem; }
+  .value { font-size: 1.15rem; font-weight: 600; margin-top: 2px; }
+  .warn {
+    margin-top: 16px;
+    background: var(--warn-bg);
+    color: var(--warn-text);
+    border-radius: 12px;
+    padding: 12px 16px;
+  }
+  h2 { font-size: 1.15rem; margin: 32px 0 12px; }
+  .days { display: grid; gap: 8px; }
+  .day {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 12px 16px;
+  }
+  .day span:last-child { font-weight: 600; text-align: right; }
+  footer { margin-top: 32px; color: var(--muted); font-size: .85rem; }
+  footer a { color: var(--accent); }
+  footer ul { padding-left: 18px; margin: 6px 0 0; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Погода в Санкт-Петербурге</h1>
+  <p class="date">Суббота, 7 ноября 2026</p>
+
+  <section class="hero" aria-label="Сегодня">
+    <div class="icon" aria-hidden="true">⛅</div>
+    <div>
+      <div class="temp">+4…+6 °C</div>
+      <div class="cond">Облачно с прояснениями, без существенных осадков</div>
+    </div>
+  </section>
+
+  <section class="grid" aria-label="Подробности">
+    <div class="item"><div class="label">Днём</div><div class="value">+4…+6 °C</div></div>
+    <div class="item"><div class="label">Ночью</div><div class="value">−1…+1 °C</div></div>
+    <div class="item"><div class="label">Ветер</div><div class="value">СЗ, 4–9 м/с</div></div>
+    <div class="item"><div class="label">Осадки</div><div class="value">Не ожидаются</div></div>
+  </section>
+
+  <div class="warn">⚠️ Утром на дорогах местами гололедица — будьте осторожны.</div>
+
+  <h2>Дальше</h2>
+  <div class="days">
+    <div class="day"><span>Вс, 8 ноября</span><span>+7…+9 °C, теплее</span></div>
+    <div class="day"><span>Пн–Ср, 9–11 ноября</span><span>Без осадков</span></div>
+  </div>
+
+  <footer>
+    Данные на 7 ноября 2026 (статичная страница, не обновляется автоматически). Источники:
+    <ul>
+      <li><a href="https://www.fontanka.ru/2026/11/07/76750925/">Фонтанка</a></li>
+      <li><a href="https://yandex.ru/pogoda/ru/saint-petersburg/details">Яндекс Погода</a></li>
+      <li><a href="https://peterburg2.ru/news/do-6-gradusov-i-bez-osadkov-kakaya-pogoda-zhdet-peterburg-v-subbotu-7-noyabrya-257703.html">Петербург2</a></li>
+      <li><a href="https://mr-7.ru/articles/2026/11/07/vozdukh-v-peterburge-progreetsia-do-9-gradusov-k-voskreseniu-news">МР7</a></li>
+      <li><a href="https://petrograd.ru/news/2026/11/7/100636">Петроград</a></li>
+    </ul>
+  </footer>
+</main>
+</body>
+</html>
