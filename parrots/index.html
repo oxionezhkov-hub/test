@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Попугаи</title>
+<meta name="description" content="Мини-сайт о попугаях: виды, факты и уход.">
+<style>
+  :root {
+    --bg: #fafaf7;
+    --text: #1a1a1a;
+    --muted: #6b6b6b;
+    --line: #e6e6e1;
+    --accent: #2e8b57;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #121412;
+      --text: #ececea;
+      --muted: #9a9a96;
+      --line: #2a2d2a;
+      --accent: #5ec48a;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font: 17px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 20px; }
+
+  header { padding: 28px 0; border-bottom: 1px solid var(--line); }
+  header .wrap { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+  .logo { font-weight: 600; letter-spacing: .02em; text-decoration: none; color: var(--text); }
+  .logo span { color: var(--accent); }
+  nav { display: flex; gap: 20px; }
+  nav a { color: var(--muted); text-decoration: none; font-size: 15px; }
+  nav a:hover { color: var(--text); }
+
+  .hero { padding: 96px 0 72px; }
+  .hero h1 { font-size: clamp(40px, 8vw, 64px); line-height: 1.05; font-weight: 600; letter-spacing: -.02em; }
+  .hero p { margin-top: 20px; color: var(--muted); max-width: 520px; font-size: 19px; }
+
+  section { padding: 64px 0; border-top: 1px solid var(--line); }
+  h2 { font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: .12em; color: var(--accent); margin-bottom: 32px; }
+
+  .species { list-style: none; }
+  .species li { display: grid; grid-template-columns: 180px 1fr; gap: 16px; padding: 18px 0; border-bottom: 1px solid var(--line); }
+  .species li:last-child { border-bottom: 0; }
+  .species b { font-weight: 600; }
+  .species span { color: var(--muted); }
+
+  .facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+  .facts .n { font-size: 40px; font-weight: 600; letter-spacing: -.02em; line-height: 1; }
+  .facts p { color: var(--muted); margin-top: 10px; font-size: 15px; }
+
+  .care { list-style: none; counter-reset: c; }
+  .care li { counter-increment: c; padding-left: 44px; position: relative; margin-bottom: 20px; }
+  .care li::before { content: counter(c, decimal-leading-zero); position: absolute; left: 0; color: var(--accent); font-variant-numeric: tabular-nums; font-size: 15px; top: 2px; }
+
+  footer { padding: 40px 0 56px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
+
+  @media (max-width: 600px) {
+    .hero { padding: 64px 0 48px; }
+    .species li { grid-template-columns: 1fr; gap: 2px; }
+    .facts { grid-template-columns: 1fr; gap: 28px; }
+    nav { gap: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="#">попугаи<span>.</span></a>
+    <nav>
+      <a href="#species">Виды</a>
+      <a href="#facts">Факты</a>
+      <a href="#care">Уход</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="hero">
+    <h1>Яркие, умные<br>и общительные.</h1>
+    <p>Около четырёхсот видов попугаев живут в тропиках по всему миру. Коротко о самых известных из них и о том, как о них заботиться.</p>
+  </div>
+
+  <section id="species">
+    <h2>Виды</h2>
+    <ul class="species">
+      <li><b>Волнистый</b><span>Маленький и неприхотливый, из Австралии. Самый популярный домашний попугай.</span></li>
+      <li><b>Жако</b><span>Серый африканский попугай. Лучший имитатор речи, запоминает сотни слов.</span></li>
+      <li><b>Ара</b><span>Крупный яркий попугай Южной Америки. Может жить больше 60 лет.</span></li>
+      <li><b>Корелла</b><span>Спокойная птица с хохолком. Любит насвистывать мелодии.</span></li>
+      <li><b>Какаду</b><span>Узнаётся по хохолку, который поднимает от волнения. Очень привязчив.</span></li>
+      <li><b>Неразлучник</b><span>Небольшой попугай из Африки, образует крепкие пары на всю жизнь.</span></li>
+    </ul>
+  </section>
+
+  <section id="facts">
+    <h2>Факты</h2>
+    <div class="facts">
+      <div><div class="n">~400</div><p>видов попугаев известно науке</p></div>
+      <div><div class="n">80+</div><p>лет — рекорд жизни крупных видов</p></div>
+      <div><div class="n">2+2</div><p>пальца на лапе: два вперёд и два назад</p></div>
+    </div>
+  </section>
+
+  <section id="care">
+    <h2>Уход</h2>
+    <ol class="care">
+      <li>Просторная клетка и ежедневные полёты по комнате.</li>
+      <li>Зерновая смесь, свежие овощи, фрукты и зелень. Без авокадо и шоколада — они ядовиты.</li>
+      <li>Общение каждый день: попугаи — стайные птицы и скучают в одиночестве.</li>
+      <li>Игрушки и ветки, чтобы грызть и думать.</li>
+      <li>Регулярные визиты к ветеринару-орнитологу.</li>
+    </ol>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">Мини-сайт о попугаях · 2026</div>
+</footer>
+
+</body>
+</html>
